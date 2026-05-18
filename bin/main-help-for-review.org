@@ -1,0 +1,52 @@
+* main.exe
+
+: A task runner for developing multi-process apps.
+:
+: Examples:
+:   proctopus 'ping:ping localhost' -n 'seq:seq 100'
+:   proctopus 'servers/web:./start-web.sh' 'servers/api:./start-api.sh' -n 'tests/unit:pytest'
+:   proctopus -g 'group:./group.sh' 'foo:echo foo' 'bar:echo bar'
+:   proctopus -i 'editor:nvim' 'build:make'
+:   proctopus -- my-complex-command -with "quoted args"
+:
+: Use -group to invoke a script that spawns a nested proctopus instance.
+: Use -interactive for commands that need an embedded terminal (e.g. nvim, htop).
+: Use -- to pass all remaining arguments as a single auto command.
+:
+:   main.exe [NAME[:CMD] ...]
+:
+: === flags ===
+:
+:   [-- CMD]                   . run CMD as a single auto command
+:   [-collapse PATH] ...       . start with the group at PATH collapsed
+:                                (repeatable)
+:   [-group NAME[:CMD]] ...    . nest commands under group, optionally running CMD
+:                                first
+:   [-interactive NAME[:CMD]] ...
+:                              . interactive commands embedded via
+:                                Bonsai_term_tmux (e.g. nvim, htop)
+:   [-log DIR]                 . tee all process output to log files under DIR,
+:                                mirroring the command tree structure. Ignored
+:                                when running as a nested instance (the parent's
+:                                log config is inherited instead).
+:   [-log-append]              . append to log files instead of truncating on
+:                                process restart. Ignored when running as a nested
+:                                instance.
+:   [-log-split]               . write stdout and stderr to separate .stdout and
+:                                .stderr files. Ignored when running as a nested
+:                                instance.
+:   [-no-auto NAME[:CMD]] ...  . commands that don't run on startup
+:   [-select PATH]             . initially select the item at PATH (e.g., foo/bar)
+:   [-theme THEME]             . color scheme (default: (Catppuccin Mocha)) (can
+:                                be: (Catppuccin Frappe), (Catppuccin Latte),
+:                                (Catppuccin Macchiato), (Catppuccin Mocha),
+:                                Bluloco, Dracula, Gruvbox_dark, Gruvbox_light,
+:                                Kanagawa, Monokai, Solarized_dark,
+:                                Solarized_light, Terminal_16,
+:                                Terminal_16_inverted, Tokyo_night_dark,
+:                                Tokyo_night_light, Vscode_dark, Vscode_light)
+:   [-title TITLE]             . title displayed at the top of the tree (default:
+:                                proctopus)
+:   [-build-info]              . print info about this build and exit
+:   [-version]                 . print the version of this build and exit
+:   [-help], -?                . print this help text and exit

@@ -1,0 +1,7 @@
+(executables
+ (modes byte exe)
+ (names main)
+ (public_names proctopus)
+ (libraries core_unix.command_unix core proctopus_app)
+ (preprocess
+  (pps ppx_jane bonsai.ppx_bonsai)))

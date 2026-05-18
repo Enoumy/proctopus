@@ -1,0 +1,13 @@
+* main.exe
+
+: Example logger that cycles through log messages, for testing proctopus
+:
+:   main.exe
+:
+: === flags ===
+:
+:   [-sexp]                    . use sexp log format instead of the default text
+:                                format
+:   [-build-info]              . print info about this build and exit
+:   [-version]                 . print the version of this build and exit
+:   [-help], -?                . print this help text and exit
