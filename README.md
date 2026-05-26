@@ -31,8 +31,7 @@ proctopus \
 Will produce a UI that looks like something like this:
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────────┐
-│ Enter Run  x Kill  PgUp/Dn Scroll Output  g/G Output Top/Bottom  w Toggle Wrap       │
+┌──────────────────────────────────────────────────────────────────────────────────────┐ │ Enter Run  x Kill  PgUp/Dn Scroll Output  g/G Output Top/Bottom  w Toggle Wrap       │
 │                                                                                      │
 │ services         │ Command: ./start-api.sh                                           │
 │ ├─ api         ● │ Status: running (PID 12345)                                       │
@@ -85,3 +84,9 @@ exec proctopus \
 well.)
 
 You can find working examples in the `example` directory.
+
+You can pass `-i name:command`, to make proctopus run your command
+"interactively", letting you embed other TUI inside of proctopus. You can take a
+look at `example/08-interactive.sh` for some examples.
+
+![Proctopus Interactive GIF Example](./demos/proctopus-interactive-demo.gif)
