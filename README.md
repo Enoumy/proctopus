@@ -31,7 +31,8 @@ proctopus \
 Will produce a UI that looks like something like this:
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────────┐ │ Enter Run  x Kill  PgUp/Dn Scroll Output  g/G Output Top/Bottom  w Toggle Wrap       │
+┌──────────────────────────────────────────────────────────────────────────────────────┐
+│ Enter Run  x Kill  PgUp/Dn Scroll Output  g/G Output Top/Bottom  w Toggle Wrap       │
 │                                                                                      │
 │ services         │ Command: ./start-api.sh                                           │
 │ ├─ api         ● │ Status: running (PID 12345)                                       │
